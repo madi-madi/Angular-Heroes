@@ -1,0 +1,98 @@
+
+<h2 hidden>{{hero.name}} Details</h2>
+<h1 [hidden]="false">Welcome:  Forsan Technology</h1>
+<pre>
+  1- *ngFor="let hero of heroes"  -- List item 
+  2- [class.selected]="hero === selectedHero" -- selected class 
+  3- (click)="onSelect(hero)  -- call data onSelect
+</pre>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes" 
+    [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+      <th scope="row">{{hero.id}}</th>
+      <td>{{hero.name}}</td>
+      <td>{{hero.gender}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+<!-- <div class="content">
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>Name: </span>{{hero.name | titlecase  }}</div>
+<div><span>Gender: </span>{{hero.gender | uppercase}}</div>
+
+</div> -->
+
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.gender" placeholder="gender">
+  </label>
+</div>
+<h3>Summery</h3>
+<pre>
+You used the CLI to create a second HeroesComponent.
+You displayed the HeroesComponent by adding it to the AppComponent shell.
+You applied the UppercasePipe to format the name.
+You used two-way data binding with the ngModel directive.
+You learned about the AppModule.
+You imported the FormsModule in the AppModule so that Angular would recognize and apply the ngModel directive.
+You learned the importance of declaring components in the AppModule and appreciated that the CLI declared it for you.
+</pre>
+
+
+<h1> New Lesson List Item</h1>
+<pre><strong>***********************************************************</strong></pre>
+
+
+<pre>
+	<code class="animated fadeIn"><span class="tag">&lt;h2&gt;</span><span class="pln">My Heroes</span><span class="tag">&lt;/h2&gt;</span><span class="pln">
+</span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"heroes"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;li&gt;</span><span class="pln">
+    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"badge"</span><span class="tag">&gt;</span><span class="pln">{{hero.id}}</span><span class="tag">&lt;/span&gt;</span><span class="pln"> {{hero.name}}
+  </span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;/ul&gt;</span></code>
+</pre>
+<strong>**********************************************************</strong>
+
+<pre><code class="animated fadeIn"><span class="tag">&lt;li</span><span class="pln"> *</span><a href="api/common/NgForOf" class="code-anchor"><span class="atn">ngFor</span></a><span class="pun">=</span><span class="atv">"let hero of heroes"</span><span class="tag">&gt;</span></code></pre>
+ <strong>**********************************************************</strong>
+<span class="alert">Note Don't forget the asterisk (*) in front of ng<strong>F</strong>or. It's a critical part of the syntax.</span>
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+ 
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+<h3> Summery</h3>
+
+<pre>
+The Tour of Heroes app displays a list of heroes in a Master/Detail view.
+The user can select a hero and see that hero's details.
+You used *ngFor to display a list.
+You used *ngIf to conditionally include or exclude a block of HTML.
+You can toggle a CSS style class with a class binding.
+</pre>

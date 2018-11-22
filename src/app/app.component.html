@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <nav>
+  <!-- <a routerlink="/dashboard"> Dashboard </a> -->
+  <a routerlink="/heroes">Heroes</a>
+</nav>
+</div>
+
+<!-- You removed <app-heroes> because you will only display the HeroesComponent when the user navigates to it.
+
+The <router-outlet> tells the router where to display routed views. -->
+<!-- <app-heroes></app-heroes> -->
+<router-outlet></router-outlet>
+<app-messages></app-messages>
